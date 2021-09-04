@@ -4,8 +4,8 @@ import com.playground.domain.entity.User;
 
 public interface UserService {
 
-    void register(User user);
+  void register(User user);
 
-    User find(String userid);
+  User find(String userid);
 
 }

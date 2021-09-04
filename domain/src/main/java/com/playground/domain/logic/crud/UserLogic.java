@@ -7,19 +7,19 @@ import com.playground.domain.store.UserStore;
 
 public class UserLogic implements UserService {
 
-    private final UserStore userStore;
+  private final UserStore userStore;
 
-    public UserLogic(StoreLifecycle storeLifecycle) {
-        this.userStore = storeLifecycle.requestUserStore();
-    }
+  public UserLogic(StoreLifecycle storeLifecycle) {
+    this.userStore = storeLifecycle.requestUserStore();
+  }
 
-    @Override
-    public void register(User user) {
-        this.userStore.create(user);
-    }
+  @Override
+  public void register(User user) {
+    this.userStore.create(user);
+  }
 
-    @Override
-    public User find(String userid) {
-        return this.userStore.retrieveByUserid(userid);
-    }
+  @Override
+  public User find(String userid) {
+    return this.userStore.retrieveByUserid(userid);
+  }
 }

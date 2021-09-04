@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class StoreLifecycler implements StoreLifecycle {
 
-    private final UserStore userStore;
+  private final UserStore userStore;
 
-    public StoreLifecycler(UserStore userStore) {
-        this.userStore = userStore;
-    }
+  public StoreLifecycler(UserStore userStore) {
+    this.userStore = userStore;
+  }
 
-    @Override
-    public UserStore requestUserStore() {
-        return this.userStore;
-    }
+  @Override
+  public UserStore requestUserStore() {
+    return this.userStore;
+  }
 }

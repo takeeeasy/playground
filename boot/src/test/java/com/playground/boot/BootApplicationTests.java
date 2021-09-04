@@ -12,14 +12,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class BootApplicationTests {
 
-    @Autowired
-    private UserService userService;
+  @Autowired
+  private UserService userService;
 
-    @Test
-    void contextLoads() {
-        User result = userService.find("sampleid");
-        Logger logger = LogManager.getLogger("DEV_LOG");
-        logger.info(new Gson().toJson(result));
-    }
+  @Test
+  void contextLoads() {
+    User result = userService.find("sampleid");
+    Logger logger = LogManager.getLogger("DEV_LOG");
+    logger.info(new Gson().toJson(result));
+  }
 
 }

@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProxyLifecycler implements ProxyLifecycle {
 
-    private final OrderProxy orderProxy;
+  private final OrderProxy orderProxy;
 
-    public ProxyLifecycler(OrderProxy orderProxy) {
-        this.orderProxy = orderProxy;
-    }
+  public ProxyLifecycler(OrderProxy orderProxy) {
+    this.orderProxy = orderProxy;
+  }
 
-    @Override
-    public OrderProxy requestOrderProxy() {
-        return this.orderProxy;
-    }
+  @Override
+  public OrderProxy requestOrderProxy() {
+    return this.orderProxy;
+  }
 }

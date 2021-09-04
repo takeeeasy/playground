@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(propagation = Propagation.REQUIRED)
 public class UserSpringLogic extends UserLogic {
 
-    public UserSpringLogic(StoreLifecycle storeLifecycle) {
-        super(storeLifecycle);
-    }
+  public UserSpringLogic(StoreLifecycle storeLifecycle) {
+    super(storeLifecycle);
+  }
 }

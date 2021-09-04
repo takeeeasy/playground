@@ -18,35 +18,39 @@ import java.util.stream.StreamSupport;
 @Entity(name = "User")
 @Table(name = "user", schema = "scheme1")
 public class UserJpo {
-    @Id
-    @Column(name = "userid")
-    private String userid;
 
-    @Column(name = "username")
-    private String username;
+  @Id
+  @Column(name = "userid")
+  private String userid;
 
-    @Column(name = "password")
-    private String password;
+  @Column(name = "username")
+  private String username;
 
-    @Column(name = "email")
-    private String email;
+  @Column(name = "password")
+  private String password;
 
-    @Column(name = "role")
-    private String role;
+  @Column(name = "email")
+  private String email;
 
-    public UserJpo(User user) {BeanUtils.copyProperties(user, this);}
+  @Column(name = "role")
+  private String role;
 
-    public UserJpo() {
+  public UserJpo(User user) {
+    BeanUtils.copyProperties(user, this);
+  }
 
-    }
+  public UserJpo() {
 
-    public User toDomain() {
-        User retVal = new User();
-        BeanUtils.copyProperties(this, retVal);
-        return retVal;
-    }
+  }
 
-    public static List<User> toDomains(Iterable<UserJpo> jpos) {
-        return StreamSupport.stream(jpos.spliterator(), false).map((UserJpo::toDomain)).collect(Collectors.toList());
-    }
+  public User toDomain() {
+    User retVal = new User();
+    BeanUtils.copyProperties(this, retVal);
+    return retVal;
+  }
+
+  public static List<User> toDomains(Iterable<UserJpo> jpos) {
+    return StreamSupport.stream(jpos.spliterator(), false).map((UserJpo::toDomain))
+        .collect(Collectors.toList());
+  }
 }

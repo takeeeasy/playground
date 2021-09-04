@@ -4,5 +4,5 @@ import com.playground.domain.spec.UserService;
 
 public interface ServiceLifecycle {
 
-    UserService requestUserService();
+  UserService requestUserService();
 }

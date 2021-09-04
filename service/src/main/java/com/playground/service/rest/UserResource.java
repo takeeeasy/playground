@@ -13,28 +13,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "user-service")
 public class UserResource {
 
-    private final UserService userService;
+  private final UserService userService;
 
-    public UserResource(ServiceLifecycle serviceLifecycle) {
-        this.userService = serviceLifecycle.requestUserService();
-    }
+  public UserResource(ServiceLifecycle serviceLifecycle) {
+    this.userService = serviceLifecycle.requestUserService();
+  }
 
-    @GetMapping(path = "/userinfo")
-    public void findUserInfo(){
-        Logger logger = LogManager.getLogger("DEVELOPER_LOG");
+  @GetMapping(path = "/userinfo")
+  public void findUserInfo() {
+    Logger logger = LogManager.getLogger("DEVELOPER_LOG");
 
-        logger.info("test");
-        logger.fatal("test");
-        logger.error("test");
-        logger.warn("test");
-        logger.debug("test");
+    logger.info("test");
+    logger.fatal("test");
+    logger.error("test");
+    logger.warn("test");
+    logger.debug("test");
 
-        User user = new User();
-        user.setUserid("test1");
-        user.setUsername("tester");
-        user.setPassword("1234");
-        user.setEmail("test@user.com");
-        user.setRole("customer");
-        userService.register(new User());
-    }
+    User user = new User();
+    user.setUserid("test1");
+    user.setUsername("tester");
+    user.setPassword("1234");
+    user.setEmail("test@user.com");
+    user.setRole("customer");
+    userService.register(new User());
+  }
 }

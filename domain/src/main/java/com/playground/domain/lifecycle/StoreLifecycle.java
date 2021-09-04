@@ -4,5 +4,5 @@ import com.playground.domain.store.UserStore;
 
 public interface StoreLifecycle {
 
-    UserStore requestUserStore();
+  UserStore requestUserStore();
 }

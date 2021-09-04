@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceLifecycler implements ServiceLifecycle {
 
-    private final UserService userService;
+  private final UserService userService;
 
-    public ServiceLifecycler(UserService userService) {
-        super();
-        this.userService = userService;
-    }
+  public ServiceLifecycler(UserService userService) {
+    super();
+    this.userService = userService;
+  }
 
-    @Override
-    public UserService requestUserService() {
-        return this.userService;
-    }
+  @Override
+  public UserService requestUserService() {
+    return this.userService;
+  }
 }

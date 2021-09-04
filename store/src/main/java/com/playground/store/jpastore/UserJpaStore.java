@@ -13,30 +13,30 @@ import java.util.Optional;
 @Repository
 public class UserJpaStore implements UserStore {
 
-    @PersistenceContext
-    EntityManager entityManager;
+  @PersistenceContext
+  EntityManager entityManager;
 
-    private final UserRepository userRepository;
+  private final UserRepository userRepository;
 
-    public UserJpaStore(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+  public UserJpaStore(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
 
-    @Override
-    public void create(User user) {
-        UserJpo jpo = new UserJpo(user);
-        entityManager.persist(jpo);
-    }
+  @Override
+  public void create(User user) {
+    UserJpo jpo = new UserJpo(user);
+    entityManager.persist(jpo);
+  }
 
-    @Override
-    public User retrieveByUserid(String userid) {
-        Optional<UserJpo> retVal = this.userRepository.findByUserid(userid);
-        return retVal.map(UserJpo::toDomain).orElse(null);
-    }
+  @Override
+  public User retrieveByUserid(String userid) {
+    Optional<UserJpo> retVal = this.userRepository.findByUserid(userid);
+    return retVal.map(UserJpo::toDomain).orElse(null);
+  }
 
-    @Override
-    public User retrieveByUsername(String username) {
-        Optional<UserJpo> retVal = this.userRepository.findByUsername(username);
-        return retVal.map(UserJpo::toDomain).orElse(null);
-    }
+  @Override
+  public User retrieveByUsername(String username) {
+    Optional<UserJpo> retVal = this.userRepository.findByUsername(username);
+    return retVal.map(UserJpo::toDomain).orElse(null);
+  }
 }

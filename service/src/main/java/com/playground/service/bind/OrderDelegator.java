@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service;
 @Service
 @EnableFeignClients(basePackages = "put.in.package.path")
 public class OrderDelegator implements OrderProxy {
+
 }
