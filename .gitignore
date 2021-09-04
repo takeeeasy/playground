@@ -1,1 +1,13 @@
 /store/store.iml
+/boot/.gitignore
+/boot/.mvn/wrapper/
+/boot/mvnw.cmd
+/boot/mvnw
+/client/client.iml
+/domain/target/
+/domain/domain.iml
+/.idea/
+/playground.iml
+/service/target/
+/service/service.iml
+/store/target/
