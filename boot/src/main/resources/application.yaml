@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+
+spring:
+  ########################################################
+  #datasource설정
+  ########################################################
+  datasource:
+    url: jdbc:postgresql://ls-09fb9ae9230de0f3dd768bb14371a25536da3870.cgsp0c9418c4.ap-northeast-2.rds.amazonaws.com/playdb
+    username: dbmasteruser
+    password: devuser12#
+    driver-class-name: org.postgresql.Driver
+
+  ########################################################
+  #jpa설정
+  ########################################################
+  jpa:
+    database: postgresql
+    show-sql: true
+
